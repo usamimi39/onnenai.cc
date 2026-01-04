@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { Poiret_One } from "next/font/google";
-import { Inter } from "next/font/google";
+import { Noto_Sans_JP } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -14,34 +14,33 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const poiretOne = Poiret_One({
-  weight: "400",
-  variable: "--font-poiret-one",
-  subsets: ["latin"],
+const notoSansJP = Noto_Sans_JP({
+  variable: "--font-noto-sans-jp",
+  subsets: ['latin'],
 });
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-});
+const renner = localFont({
+  src: [
+    {
+      path: '../../public/fonts/Renner_400_Book.ttf',
+      weight: '400',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-renner',
+})
 
 export const metadata: Metadata = {
   title: "Portfolio | Onnenai",
   description: "Welcome to Onnenai's portfolio website.",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+    <html lang="ja" className={`${renner.variable} ${notoSansJP.variable}`}>
+      <body className="font-sans antialiased">
         {children}
       </body>
     </html>
-  );
+  )
 }
