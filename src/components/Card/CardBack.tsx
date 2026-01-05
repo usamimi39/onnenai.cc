@@ -10,8 +10,6 @@ interface UserCardProps {
 export function CardBack({ onFlip }: UserCardProps) {
   // 固定値のデータを表示
   const displayText = "ONNENAI PORTFOLIO";
-  const username = "onnenai_w57";
-
   return (
     <div className="@container w-full min-w-[300px] aspect-[1.62/1] mx-auto font-inter rounded-lg shadow-md p-[5%] flex flex-col justify-center bg-slate-50 relative">
       <div className="absolute w-[13%] h-[13%] top-[20%] left-[15%] text-slate-400">
