@@ -1,5 +1,7 @@
-import Image from "next/image";
+"use client";
+
 import Header from "../components/Header";
+import FlipAnimation from "../components/Card/FlipAnimation";
 
 export default function Home() {
   return (
@@ -8,6 +10,9 @@ export default function Home() {
       <Header />
       <main className="flex min-h-screen items-center justify-center">
         {/* Content here */}
+        <div className="w-full p-2">
+          <FlipAnimation/>
+        </div>
       </main>
     </div>
   );
