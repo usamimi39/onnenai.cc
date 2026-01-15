@@ -16,7 +16,7 @@ export default function FlipAnimation() {
     }
   };
   return (
-    <div className="group w-full max-w-lg min-w-none aspect-[1.62/1] [perspective:1000px] mx-auto">
+    <div className="group w-full max-w-md min-w-none aspect-[1.62/1] [perspective:1000px] mx-auto">
       <motion.div
         className="relative h-full w-full [transform-style:preserve-3d] [will-change:transform]"
         initial={false}
